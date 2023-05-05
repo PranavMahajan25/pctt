@@ -30,6 +30,7 @@ def get_mnist(datapath, sample_size, sample_size_test, batch_size, seed, device,
 
     X, y = [], []
     for batch_idx, (data, targ) in enumerate(train_loader):
+        print(data.shape)
         X.append(data)
         y.append(targ)
     X = torch.cat(X, dim=0).to(device) # size, 28, 28
